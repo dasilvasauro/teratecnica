@@ -1,0 +1,553 @@
+ /* ============================================
+           VARIÁVEIS CSS - BEM DOCUMENTADAS
+           ============================================ */
+        
+        /* Modo Claro - Cores principais */
+        :root {
+            /* Cores principais do projeto */
+            --primary-color: #324aa8;     /* Azul predominante */
+            --secondary-color: #cc6627;   /* Laranja para botões */
+            
+            /* Cores de suporte para modo claro */
+            --light-bg: #f8fafc;          /* Fundo principal com leve tom azul */
+            --light-card-bg: #ffffff;     /* Fundo de cards */
+            --light-text: #333333;        /* Texto principal */
+            --light-text-secondary: #666666; /* Texto secundário */
+            
+            /* Cores para navbar e elementos de interface */
+            --navbar-bg: rgba(255, 255, 255, 0.85); /* Navbar com transparência */
+            --footer-bg: #f1f5f9;         /* Fundo do footer */
+            
+            /* Sombras e efeitos visuais */
+            --shadow: 0 4px 12px rgba(0, 0, 0, 0.08); /* Sombra suave para elementos */
+            --border-radius: 16px;        /* Cantos arredondados no estilo "squircle" */
+            
+            /* Transições e animações */
+            --transition: all 0.3s ease;  /* Transição padrão para elementos */
+            --page-transition: 0.4s ease; /* Transição para troca de páginas */
+        }
+        
+        /* Modo Escuro - Sobrescreve as cores do modo claro */
+        [data-theme="dark"] {
+            /* Cores principais mantidas, mas ajustadas para contraste */
+            --primary-color: #3a5bc7;     /* Azul mais claro para melhor contraste */
+            --secondary-color: #d97a3a;   /* Laranja mais claro */
+            
+            /* Cores de suporte para modo escuro */
+            --light-bg: #121212;          /* Fundo escuro principal */
+            --light-card-bg: #1e1e1e;     /* Fundo de cards escuro */
+            --light-text: #f5f5f5;        /* Texto claro */
+            --light-text-secondary: #b0b0b0; /* Texto secundário claro */
+            
+            /* Cores para navbar e elementos de interface */
+            --navbar-bg: rgba(30, 30, 30, 0.85); /* Navbar escura com transparência */
+            --footer-bg: #0a0a0a;         /* Fundo do footer escuro */
+            
+            /* Sombras ajustadas para modo escuro */
+            --shadow: 0 4px 12px rgba(0, 0, 0, 0.3); /* Sombra mais forte */
+        }
+        
+        /* ============================================
+           ESTILOS GERAIS
+           ============================================ */
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: var(--light-bg);
+            color: var(--light-text);
+            transition: var(--transition);
+            overflow-x: hidden;
+            padding-top: 76px; /* Espaço para a navbar fixa */
+        }
+        
+        /* Margens laterais para evitar que o texto fique colado nas bordas */
+        .container, .container-fluid {
+            padding-left: 15px;
+            padding-right: 15px;
+        }
+        
+        /* ============================================
+           NAVBAR - COM BLUR E RESPONSIVIDADE
+           ============================================ */
+        
+        .navbar {
+            background-color: var(--navbar-bg) !important;
+            backdrop-filter: blur(10px); /* Efeito de desfoque gaussiano */
+            -webkit-backdrop-filter: blur(10px); /* Para compatibilidade com Safari */
+            padding: 0.8rem 1rem;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            transition: var(--transition);
+            position: fixed;
+            top: 0;
+            width: 100%;
+            z-index: 1030;
+        }
+        
+        .navbar-brand {
+            font-weight: 700;
+            color: var(--primary-color) !important;
+            font-size: 1.5rem;
+        }
+        
+        .navbar-nav .nav-link {
+            color: var(--light-text) !important;
+            font-weight: 500;
+            padding: 0.5rem 1rem;
+            border-radius: var(--border-radius);
+            margin: 0 0.2rem;
+            transition: var(--transition);
+        }
+        
+        .navbar-nav .nav-link.active {
+            background-color: rgba(50, 74, 168, 0.1);
+            color: var(--primary-color) !important;
+        }
+        
+        .navbar-nav .nav-link:hover {
+            background-color: rgba(50, 74, 168, 0.05);
+        }
+        
+        .navbar-toggler {
+            border: none;
+            padding: 0.25rem 0.5rem;
+        }
+        
+        .navbar-toggler:focus {
+            box-shadow: none;
+        }
+        
+        /* Overlay para quando o menu hamburger estiver aberto */
+        .navbar-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.5);
+            z-index: 1029;
+            opacity: 0;
+            visibility: hidden;
+            transition: opacity 0.3s ease;
+        }
+        
+        .navbar-overlay.active {
+            opacity: 1;
+            visibility: visible;
+        }
+        
+        /* ============================================
+           SEÇÕES E PÁGINAS
+           ============================================ */
+        
+        .page {
+            display: none;
+            min-height: calc(100vh - 76px);
+            padding: 2rem 0;
+            animation: fadeIn 0.5s ease;
+        }
+        
+        .page.active {
+            display: block;
+        }
+        
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        
+        /* ============================================
+           HERO SECTION - CORRIGIDO
+           ============================================ */
+        
+        .hero {
+            background-color: var(--primary-color);
+            color: white;
+            padding: 3rem 1rem;
+            border-radius: 0;
+            margin-bottom: 2rem;
+            /* Remove margens laterais para estender até as extremidades */
+            margin-left: calc(-50vw + 50%);
+            margin-right: calc(-50vw + 50%);
+            /* Adiciona padding lateral para o conteúdo não ficar colado */
+            padding-left: 15px;
+            padding-right: 15px;
+        }
+        
+        .hero-content {
+            max-width: 1140px;
+            margin: 0 auto;
+        }
+        
+        .hero h1 {
+            font-weight: 700;
+            margin-bottom: 1rem;
+        }
+        
+        .hero p {
+            font-size: 1.1rem;
+            margin-bottom: 1.5rem;
+        }
+        
+        /* ============================================
+           CARROSSEL DE CLIENTES
+           ============================================ */
+        
+        .clients-section {
+            padding: 2rem 0;
+            position: relative;
+        }
+        
+        .clients-carousel {
+            display: flex;
+            overflow: hidden;
+            position: relative;
+            margin: 2rem 0;
+        }
+        
+        .clients-track {
+            display: flex;
+            animation: scroll 30s linear infinite;
+        }
+        
+        .client-logo {
+            flex: 0 0 auto;
+            width: 150px;
+            height: 80px;
+            margin: 0 1.5rem;
+            background-color: #e9ecef;
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--light-text-secondary);
+            font-weight: 500;
+        }
+        
+        /* Fade nas extremidades do carrossel */
+        .clients-carousel::before,
+        .clients-carousel::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            width: 100px;
+            height: 100%;
+            z-index: 2;
+        }
+        
+        .clients-carousel::before {
+            left: 0;
+            background: linear-gradient(to right, var(--light-bg), transparent);
+        }
+        
+        .clients-carousel::after {
+            right: 0;
+            background: linear-gradient(to left, var(--light-bg), transparent);
+        }
+        
+        @keyframes scroll {
+            0% { transform: translateX(0); }
+            100% { transform: translateX(-50%); }
+        }
+        
+        /* ============================================
+           CARDS E BOTÕES
+           ============================================ */
+        
+        .card {
+            border: none;
+            border-radius: var(--border-radius);
+            box-shadow: var(--shadow);
+            transition: var(--transition);
+            background-color: var(--light-card-bg);
+            margin-bottom: 1.5rem;
+        }
+        
+        .card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.12);
+        }
+        
+        .card-body {
+            padding: 1.5rem;
+        }
+        
+        .btn {
+            border-radius: var(--border-radius);
+            font-weight: 500;
+            padding: 0.5rem 1.5rem;
+            transition: var(--transition);
+        }
+        
+        .btn-primary {
+            background-color: var(--primary-color);
+            border-color: var(--primary-color);
+        }
+        
+        .btn-primary:hover {
+            background-color: #2a3f8f;
+            border-color: #2a3f8f;
+            transform: translateY(-2px);
+        }
+        
+        .btn-secondary {
+            background-color: var(--secondary-color);
+            border-color: var(--secondary-color);
+            color: white;
+        }
+        
+        .btn-secondary:hover {
+            background-color: #b55a22;
+            border-color: #b55a22;
+            color: white;
+            transform: translateY(-2px);
+        }
+        
+        /* ============================================
+           SLIDESHOW PARA SERVIÇOS
+           ============================================ */
+        
+        .hero-slideshow {
+            position: relative;
+            height: 400px;
+            border-radius: var(--border-radius);
+            overflow: hidden;
+        }
+        
+        .slide {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            opacity: 0;
+            transition: opacity 1s ease;
+            background-size: cover;
+            background-position: center;
+        }
+        
+        .slide.active {
+            opacity: 1;
+        }
+        
+        /* ============================================
+           BOTÃO FLUTUANTE DO WHATSAPP
+           ============================================ */
+        
+        .whatsapp-float {
+            position: fixed;
+            bottom: 25px;
+            right: 25px;
+            width: 60px;
+            height: 60px;
+            background-color: #25D366;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+            z-index: 1000;
+            transition: var(--transition);
+            animation: pulse 2s infinite;
+        }
+        
+        .whatsapp-float:hover {
+            transform: scale(1.1);
+            box-shadow: 0 6px 16px rgba(0, 0, 0, 0.2);
+        }
+        
+        .whatsapp-float i {
+            color: white;
+            font-size: 1.8rem;
+        }
+        
+        @keyframes pulse {
+            0% { box-shadow: 0 0 0 0 rgba(37, 211, 102, 0.7); }
+            70% { box-shadow: 0 0 0 10px rgba(37, 211, 102, 0); }
+            100% { box-shadow: 0 0 0 0 rgba(37, 211, 102, 0); }
+        }
+        
+        /* ============================================
+           BOTÃO VOLTAR AO TOPO - NOVO
+           ============================================ */
+        
+        .back-to-top {
+            position: fixed;
+            bottom: 95px;
+            right: 25px;
+            width: 50px;
+            height: 50px;
+            background-color: var(--primary-color);
+            color: white;
+            border: none;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+            z-index: 999;
+            transition: var(--transition);
+            opacity: 0;
+            visibility: hidden;
+        }
+        
+        .back-to-top.show {
+            opacity: 1;
+            visibility: visible;
+        }
+        
+        .back-to-top:hover {
+            background-color: #2a3f8f;
+            transform: translateY(-3px);
+        }
+        
+        /* ============================================
+           FORMULÁRIO DE CONTATO
+           ============================================ */
+        
+        .contact-form {
+            background-color: var(--light-card-bg);
+            border-radius: var(--border-radius);
+            padding: 2rem;
+            box-shadow: var(--shadow);
+        }
+        
+        .form-control {
+            border-radius: var(--border-radius);
+            padding: 0.75rem 1rem;
+            border: 1px solid #dee2e6;
+            transition: var(--transition);
+        }
+        
+        .form-control:focus {
+            border-color: var(--primary-color);
+            box-shadow: 0 0 0 0.2rem rgba(50, 74, 168, 0.25);
+        }
+        
+        /* ============================================
+           FOOTER E TOGGLE DE MODO ESCURO
+           ============================================ */
+        
+        footer {
+            background-color: var(--footer-bg);
+            padding: 2rem 0;
+            margin-top: 3rem;
+        }
+        
+        .theme-toggle {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+        
+        .theme-toggle-label {
+            margin-bottom: 0;
+            font-weight: 500;
+        }
+        
+        .switch {
+            position: relative;
+            display: inline-block;
+            width: 50px;
+            height: 24px;
+        }
+        
+        .switch input {
+            opacity: 0;
+            width: 0;
+            height: 0;
+        }
+        
+        .slider {
+            position: absolute;
+            cursor: pointer;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-color: #ccc;
+            transition: .4s;
+            border-radius: 34px;
+        }
+        
+        .slider:before {
+            position: absolute;
+            content: "";
+            height: 16px;
+            width: 16px;
+            left: 4px;
+            bottom: 4px;
+            background-color: white;
+            transition: .4s;
+            border-radius: 50%;
+        }
+        
+        input:checked + .slider {
+            background-color: var(--primary-color);
+        }
+        
+        input:checked + .slider:before {
+            transform: translateX(26px);
+        }
+        
+        /* ============================================
+           RESPONSIVIDADE
+           ============================================ */
+        
+        @media (max-width: 768px) {
+            body {
+                padding-top: 70px;
+            }
+            
+            .hero h1 {
+                font-size: 1.8rem;
+            }
+            
+            .client-logo {
+                width: 120px;
+                height: 60px;
+                margin: 0 1rem;
+            }
+            
+            .clients-carousel::before,
+            .clients-carousel::after {
+                width: 50px;
+            }
+            
+            .whatsapp-float {
+                width: 55px;
+                height: 55px;
+                bottom: 20px;
+                right: 20px;
+            }
+            
+            .whatsapp-float i {
+                font-size: 1.6rem;
+            }
+            
+            .back-to-top {
+                width: 45px;
+                height: 45px;
+                bottom: 85px;
+                right: 20px;
+            }
+        }
+        
+        @media (max-width: 576px) {
+            .hero {
+                padding: 3rem 1rem;
+            }
+            
+            .card-body {
+                padding: 1.25rem;
+            }
+            
+            .contact-form {
+                padding: 1.5rem;
+            }
+        }
