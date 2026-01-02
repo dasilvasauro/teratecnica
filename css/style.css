@@ -166,7 +166,11 @@
            ============================================ */
         
         .hero {
-            background-color: var(--primary-color);
+            background-image: linear-gradient(rgba(0, 0, 0, 0.38), rgba(0, 0, 0, 0.38)), url('hero.png');
+			background-size: cover;
+			background-position: center;
+			margin-top: -75px;
+			text-align: center;
             color: white;
             padding: 3rem 1rem;
             border-radius: 0;
@@ -180,8 +184,7 @@
         }
         
         .hero-content {
-            max-width: 1140px;
-            margin: 0 auto;
+			margin: 200px 0px 0px 0px;
         }
         
         .hero h1 {
@@ -218,9 +221,8 @@
         .client-logo {
             flex: 0 0 auto;
             width: 150px;
-            height: 80px;
+            height: 120px;
             margin: 0 1.5rem;
-            background-color: #e9ecef;
             border-radius: 8px;
             display: flex;
             align-items: center;
@@ -363,8 +365,14 @@
         
         .whatsapp-float i {
             color: white;
+			text-decoration: none;
             font-size: 1.8rem;
         }
+		
+		.whatsapp-float a{
+			color: none;
+			text-decoration: none;
+		}
         
         @keyframes pulse {
             0% { box-shadow: 0 0 0 0 rgba(37, 211, 102, 0.7); }
