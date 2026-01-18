@@ -290,7 +290,7 @@
             flex-direction: column;
         }
 
-        .card-body .btn {
+        .card-body .mt-auto {
             margin-top: auto;
         }
         
@@ -526,6 +526,18 @@
         [data-theme="dark"] .navbar-toggler-icon {
 			filter: invert(1);
 		}
+
+        @media (min-width: 768px) {
+            .card-body .mt-auto {
+                align-self: flex-start;
+            }
+        }
+
+        @media (max-width: 767px) {
+            .row.mt-5 > .col-md-4 {
+                margin-bottom: 1.5rem;
+            }
+        }
 
         @media (max-width: 768px) {
             body {
