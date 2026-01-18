@@ -533,8 +533,23 @@
                 margin: 0 1rem;
             }
             
+            .navbar-collapse {
+                transition: all 0.3s ease;
+            }
+
             .navbar-collapse.show {
                 padding-top: 1.5rem; /* Add space between logo and menu items */
+            }
+
+            .navbar-collapse .navbar-nav {
+                opacity: 0;
+                transform: translateY(-10px);
+                transition: all 0.3s ease;
+            }
+
+            .navbar-collapse.show .navbar-nav {
+                opacity: 1;
+                transform: translateY(0);
             }
             
             .clients-carousel::before,
