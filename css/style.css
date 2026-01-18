@@ -514,6 +514,10 @@
            RESPONSIVIDADE
            ============================================ */
         
+        [data-theme="dark"] .navbar-toggler-icon {
+			filter: invert(1);
+		}
+
         @media (max-width: 768px) {
             body {
                 padding-top: 70px;
