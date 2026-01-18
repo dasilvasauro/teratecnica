@@ -533,6 +533,10 @@
                 margin: 0 1rem;
             }
             
+            .navbar-collapse.show .navbar-nav {
+                margin-top: 1.5rem; /* Add space between logo and menu items */
+            }
+            
             .clients-carousel::before,
             .clients-carousel::after {
                 width: 50px;
