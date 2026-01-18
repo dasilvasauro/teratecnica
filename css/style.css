@@ -270,6 +270,7 @@
            ============================================ */
         
         .card {
+	    height: 100%;
             border: none;
             border-radius: var(--border-radius);
             box-shadow: var(--shadow);
@@ -285,6 +286,12 @@
         
         .card-body {
             padding: 1.5rem;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .card-body .btn {
+            margin-top: auto;
         }
         
         .btn {
