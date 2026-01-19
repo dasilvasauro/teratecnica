@@ -533,12 +533,6 @@
             }
         }
 
-        @media (max-width: 767px) {
-            .row.mt-5 > .col-md-4 {
-                margin-bottom: 1.5rem;
-            }
-        }
-
         @media (max-width: 768px) {
             body {
                 padding-top: 70px;
