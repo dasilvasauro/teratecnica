@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Teratécnica</title>
+    <title>Serviços Profissionais</title>
     
     <!-- Bootstrap 5 CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
@@ -24,8 +24,8 @@
     <nav class="navbar navbar-expand-lg navbar-light">
         <div class="container">
             <!-- Logo -->
-            <a class="navbar-brand" href="#" data-page="home">
-				<img src="imgs/logoTeratecnica.png" alt="Tera Tecnica Logo" height="54">
+            <a class="navbar-brand" href="#">
+				<img src="imgs/logoTeratecnica.png" alt="Tera Tecnica Logo" height="60">
 			</a>
             
             <!-- Menu Hamburger para mobile -->
@@ -62,7 +62,7 @@
                     <div class="text-center">
                         <h1>Soluções Profissionais para o seu Negócio</h1>
                         <p>Oferecemos serviços de alta qualidade para impulsionar seus resultados e transformar suas ideias em realidade.</p>
-                        <a href="#" id="heroServicesButton" class="btn btn-secondary" data-page="services">Conheça nossos serviços</a>
+                        <a href="#" class="btn btn-secondary" data-page="services">Conheça nossos serviços</a>
                     </div>
                 </div>
             </div>
@@ -74,64 +74,60 @@
                 <h2 class="text-center mb-4">Nossos Clientes</h2>
                 <div class="clients-carousel">
                     <div class="clients-track">
-                        <div class="client-logo"><img src="imgs/accor.png"></img></div>
-                        <div class="client-logo"><img src="imgs/tryp.png"></div>
-                        <div class="client-logo"><img src="imgs/helbor.png"></div>
-                        <div class="client-logo"><img src="imgs/pullman.png"></div>
-                        <div class="client-logo"><img src="imgs/marriott.png"></div>
+                        <div class="client-logo"><img src="imgs/accor.png" height="80px"></img></div>
+                        <div class="client-logo"><img src="imgs/tryp.png" height="80px"></div>
+                        <div class="client-logo"><img src="imgs/helbor.png" height="80px"></div>
+                        <div class="client-logo"><img src="imgs/pullman.png" height="80px"></div>
+                        <div class="client-logo"><img src="imgs/marriott.png" height="80px"></div>
                         <!-- Duplicando para criar efeito de loop infinito -->
-                        <div class="client-logo"><img src="imgs/accor.png"></img></div>
-                        <div class="client-logo"><img src="imgs/tryp.png"></div>
-                        <div class="client-logo"><img src="imgs/helbor.png"></div>
-                        <div class="client-logo"><img src="imgs/pullman.png"></div>
-                        <div class="client-logo"><img src="imgs/marriott.png"></div>
+                        <div class="client-logo"><img src="imgs/accor.png" height="80px"></img></div>
+                        <div class="client-logo"><img src="imgs/tryp.png" height="80px"></div>
+                        <div class="client-logo"><img src="imgs/helbor.png" height="80px"></div>
+                        <div class="client-logo"><img src="imgs/pullman.png" height="80px"></div>
+                        <div class="client-logo"><img src="imgs/marriott.png" height="80px"></div>
                     </div>
                 </div>
             </div>
             
             <!-- Seção de Cards -->
-            <div class="row mt-5 home-cards-row">
-                <div class="col-md-4 mb-4">
+            <div class="row mt-5">
+                <div class="col-md-4">
                     <div class="card">
                         <div class="card-body">
                             <h5 class="card-title">Vendas de Equipamentos Especializados</h5>
                             <p class="card-text">Comercializamos diversos tipos de equipamentos conforme a necessidade do cliente</p>
-                            <div class="mt-auto">
-                                <a href="#" class="btn btn-primary" data-page="services">Saiba mais</a>
-                            </div>
+			    <br>
+                            <a href="#" class="btn btn-primary">Saiba mais</a>
                         </div>
                     </div>
                 </div>
-                <div class="col-md-4 mb-4">
+                <div class="col-md-4">
                     <div class="card">
                         <div class="card-body">
                             <h5 class="card-title">Projetos de Rede sobre medida</h5>
                             <p class="card-text">Projetos de rede a fim de atender todas as necessidades de comunicação</p>
-                            <div class="mt-auto">
-							    <a href="#" class="btn btn-primary" data-page="services">Saiba mais</a>
-                            </div>
+                            <br><br>
+							<a href="#" class="btn btn-primary">Saiba mais</a>
                         </div>
                     </div>
                 </div>
-                <div class="col-md-4 mb-4">
+                <div class="col-md-4">
                     <div class="card">
                         <div class="card-body">
                             <h5 class="card-title">Projetos especiais de aúdio e vídeo</h5>
                             <p class="card-text">Projetos desenvolvidos para suprir todas as necessidades de áudio e visual sempre buscando a excelência</p>
-                            <div class="mt-auto">
-							    <a href="#" class="btn btn-primary" data-page="services">Saiba mais</a>
-                            </div>
+                            <br>
+							<a href="#" class="btn btn-primary">Saiba mais</a>
                         </div>
                     </div>
                 </div>
-				<div class="col-md-4 mb-4">
+				<div class="col-md-4">
 					<div class="card">
 						<div class="card-body">
 							<h5 class="card-title">Projetos de Segurança Predial</h5>
 							<p class="card-text">Projetos planejados visando confiabilidade utilizado da mais moderna tecnologia disponível</p>
-                            <div class="mt-auto">
-							    <a href="#" class="btn btn-primary" data-page="services">Saiba mais</a>
-                            </div>
+							<br>
+							<a href="#" class="btn btn-primary">Saiba mais</a>
 						</div>
 					</div>
 				</div>
@@ -155,61 +151,60 @@
                 <div class="col-lg-6 mb-4">
                     <div class="card h-100">
                         <div class="card-body">
-                            <h3 class="card-title">Vendas de Equipamentos Especializados</h3>
-                            <p class="card-text">Oferecemos os melhores equipamentos de infraestrutura e tecnologia, selecionados para atender projetos de grande escala com qualidade superior.</p>
+                            <h3 class="card-title">Consultoria Empresarial</h3>
+                            <p class="card-text">Oferecemos consultoria especializada para empresas de todos os tamanhos. Nossa equipe analisa seus processos, identifica oportunidades de melhoria e implementa soluções personalizadas para otimizar sua operação.</p>
                             <ul>
-                                <li>Fornecimento de marcas homologadas e de alta performance.</li>
-                                <li>Equipamentos para redes, iluminação, CFTV e sistemas integrados.</li>
-                                <li>Assessoria técnica para escolha ideal do material.</li>
-                                <li>Parceria com fornecedores diretos para melhor custo-benefício.</li>
+                                <li>Análise de processos internos</li>
+                                <li>Otimização de fluxo de trabalho</li>
+                                <li>Planejamento estratégico</li>
+                                <li>Implementação de melhorias</li>
                             </ul>
-                            <a href="#" class="btn btn-primary" data-page="contact">Solicitar orçamento</a>
+                            <a href="#" class="btn btn-primary">Solicitar orçamento</a>
                         </div>
                     </div>
                 </div>
                 <div class="col-lg-6 mb-4">
                     <div class="card h-100">
                         <div class="card-body">
-                            <h3 class="card-title">Projetos de Rede Sob Medida</h3>
-                            <p class="card-text">Desenvolvemos projetos de rede estruturada robustos e escaláveis, garantindo alta performance e segurança para operações críticas.</p>
-                            <br>
+                            <h3 class="card-title">Desenvolvimento Web</h3>
+                            <p class="card-text">Criamos sites e aplicações web modernas, responsivas e otimizadas para todos os dispositivos. Utilizamos as melhores tecnologias do mercado para garantir performance, segurança e uma excelente experiência do usuário.</p>
                             <ul>
-                                <li>Topologias planejadas para alta disponibilidade e tráfego intenso.</li>
-                                <li>Infraestrutura física e lógica integrada e documentada.</li>
-                                <li>Soluções para Wi-Fi corporativo de alto desempenho.</li>
-                                <li>Projetos alinhados às necessidades atuais e futuras de expansão.</li>
+                                <li>Desenvolvimento de sites responsivos</li>
+                                <li>Aplicações web personalizadas</li>
+                                <li>E-commerce</li>
+                                <li>Manutenção e suporte</li>
                             </ul>
-                            <a href="#" class="btn btn-primary" data-page="contact">Solicitar orçamento</a>
+                            <a href="#" class="btn btn-primary">Solicitar orçamento</a>
                         </div>
                     </div>
                 </div>
                 <div class="col-lg-6 mb-4">
                     <div class="card h-100">
                         <div class="card-body">
-                            <h3 class="card-title">Projetos Especiais de Áudio e Vídeo</h3>
-                            <p class="card-text">Criamos soluções de AV personalizadas para ambientes corporativos e de hospitalidade, priorizando a experiência do usuário final.</p>
+                            <h3 class="card-title">Marketing Digital</h3>
+                            <p class="card-text">Desenvolvemos estratégias de marketing digital personalizadas para aumentar sua visibilidade online, atrair mais clientes qualificados e impulsionar suas vendas. Trabalhamos com as principais ferramentas do mercado.</p>
                             <ul>
-                                <li>Sistemas de sonorização ambiente e salas de reunião.</li>
-                                <li>Integração centralizada e controle intuitivo dos sistemas.</li>
-                                <li>Design discreto e de alta fidelidade para ambientes sofisticados.</li>
-                                <li>Sistemas de iluminação com dimmer.</li>
+                                <li>SEO (Otimização para motores de busca)</li>
+                                <li>Google Ads e Facebook Ads</li>
+                                <li>Marketing de conteúdo</li>
+                                <li>E-mail marketing</li>
                             </ul>
-                            <a href="#" class="btn btn-primary" data-page="contact">Solicitar orçamento</a>
+                            <a href="#" class="btn btn-primary">Solicitar orçamento</a>
                         </div>
                     </div>
                 </div>
                 <div class="col-lg-6 mb-4">
                     <div class="card h-100">
                         <div class="card-body">
-                            <h3 class="card-title">Projetos de Segurança Predial</h3>
-                            <p class="card-text">Implementamos soluções completas de segurança eletrônica, garantindo proteção e monitoramento contínuo para empreendimentos de alto padrão.</p>
+                            <h3 class="card-title">Design Gráfico</h3>
+                            <p class="card-text">Criamos identidades visuais marcantes e materiais gráficos de alta qualidade que comunicam efetivamente a essência da sua marca. Do logo aos materiais promocionais, cuidamos de cada detalhe.</p>
                             <ul>
-                                <li>Circuito fechado de TV (CFTV).</li>
-                                <li>Sistemas de controle de acesso integrado e rastreável.</li>
-                                <li>Projetos com redundância e confiabilidade máximas.</li>
-                                <li>Tecnologia de ponta para prevenção e resposta eficaz.</li>
+                                <li>Criação de identidade visual</li>
+                                <li>Design de logotipo</li>
+                                <li>Materiais promocionais</li>
+                                <li>Apresentações corporativas</li>
                             </ul>
-                            <a href="#" class="btn btn-primary" data-page="contact">Solicitar orçamento</a>
+                            <a href="#" class="btn btn-primary">Solicitar orçamento</a>
                         </div>
                     </div>
                 </div>
@@ -223,9 +218,9 @@
             <div class="row align-items-center">
                 <div class="col-lg-6 mb-4 mb-lg-0">
                     <h1 class="mb-4">Sobre Nós</h1>
-                    <p class="mb-4">A Teratécnia é uma empresa especializada que atua no mercado há mais de 10 anos. Sempre buscando a excelência e satisfação dos seus clientes.</p>
-                    <p class="mb-4">Durante esse tempo construímos um portfólio na área de segurança eletrônica, vendas de equipamentos, projetos de audiovisual, centrais telefônicas, interfones e muito mais. </p>
-                    <p class="mb-4">Estamos sempre buscando a excelência no atendimento das necessidades dos nossos clientes. Fornecendo soluções ideais para suas demandas.</p>
+                    <p class="mb-4">Somos uma empresa especializada em soluções profissionais para negócios de todos os portes. Com anos de experiência no mercado, nossa missão é ajudar empresas a alcançarem seu potencial máximo através de serviços de alta qualidade.</p>
+                    <p class="mb-4">Nossa equipe é composta por profissionais altamente qualificados e apaixonados pelo que fazem. Trabalhamos com metodologias ágeis e as mais recentes tecnologias para entregar resultados excepcionais aos nossos clientes.</p>
+                    <p class="mb-4">Acreditamos que cada cliente é único, por isso desenvolvemos soluções personalizadas que atendem às necessidades específicas de cada negócio. Nossa abordagem colaborativa garante que você esteja envolvido em cada etapa do processo.</p>
                     <a href="#" class="btn btn-primary" data-page="contact">Entre em contato</a>
                 </div>
                 <div class="col-lg-6 text-center">
@@ -285,12 +280,14 @@
                     <!-- Formulário de Contato -->
                     <div class="card mb-4">
 						<div class="card-body text-center">
-                            <div class="mb-3">
-                                <i class="far fa-envelope fa-3x text-primary"></i>
-                            </div>
 							<h3 class="card-title">Contato via E-mail</h3>
 							<p class="card-text">Envie uma mensagem mais detalhada por e-mail</p>
 							<a href="mailto:teratecnica@uol.com.br" class="btn btn-primary" target="_blank">
+								<!--- Icone do Email --->
+								<svg width="20" height="20" viewBox="0 0 24 24" fill=none>
+									<path d="M4 7.00005L10.2 11.65C11.2667 12.45 12.7333 12.45 13.8 11.65L20 7" stroke="#FFFFFF" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+									<rect x="3" y="5" width="18" height="14" rx="2" stroke="#FFFFFF" stroke-width="2" stroke-linecap="round"/>
+								</svg>
 								Enviar E-mail
 							</a>
 						</div>
@@ -325,7 +322,7 @@
                     </div>
                 </div>
                 <div class="col-md-6 text-md-end mt-3 mt-md-0">
-                    <p class="mb-0">&copy; 2026 Teratécnica. Todos os direitos reservados.</p>
+                    <p class="mb-0">&copy; 2023 ServiçosPro. Todos os direitos reservados.</p>
                 </div>
             </div>
         </div>

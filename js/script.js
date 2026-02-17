@@ -62,6 +62,51 @@ navLinks.forEach(link => {
     });
 });
 
+// Seleciona todos os elementos com o atributo data-page que NÃO são links de navegação principais
+const otherDataPageTriggers = document.querySelectorAll('*:not(.nav-link)[data-page]');
+
+// Adiciona evento de clique para cada um desses elementos
+otherDataPageTriggers.forEach(element => {
+    element.addEventListener('click', function(e) {
+        e.preventDefault();
+        
+        const targetPage = this.getAttribute('data-page');
+        
+        // Remove a classe active de todas as páginas
+        pages.forEach(page => page.classList.remove('active'));
+        // Remove a classe active de todos os links de navegação
+        navLinks.forEach(navLink => navLink.classList.remove('active'));
+        
+        // Adiciona a classe active à página correspondente
+        document.getElementById(targetPage).classList.add('active');
+        
+        // Ativa o link de navegação correspondente no menu principal
+        const correspondingNavLink = document.querySelector(`.nav-link[data-page="${targetPage}"]`);
+        if (correspondingNavLink) {
+            correspondingNavLink.classList.add('active');
+        }
+
+        // Fecha o menu hamburger se estiver aberto em dispositivos móveis
+        if (navbarCollapse.classList.contains('show')) {
+            const bsCollapse = new bootstrap.Collapse(navbarCollapse, {
+                toggle: false
+            });
+            bsCollapse.hide();
+        }
+        
+        // Oculta o botão do WhatsApp na página de contato
+        if (targetPage === 'contact') {
+            whatsappButton.style.display = 'none';
+        } else {
+            whatsappButton.style.display = 'flex';
+        }
+        
+        // Rola a página para o topo
+        window.scrollTo(0, 0);
+    });
+});
+
+
 /*
  * CONTROLE DO MODO ESCURO
  * 

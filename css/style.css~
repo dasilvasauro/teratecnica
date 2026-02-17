@@ -168,7 +168,7 @@
         .hero {
             background-image: linear-gradient(rgba(0, 0, 0, 0.38), rgba(0, 0, 0, 0.38)), url('hero.png');
 			background-size: cover;
-			background-position: center 75%;
+			background-position: center;
 			margin-top: -75px;
 			text-align: center;
             color: white;
@@ -190,13 +190,11 @@
         .hero h1 {
             font-weight: 700;
             margin-bottom: 1rem;
-            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
         }
         
         .hero p {
             font-size: 1.1rem;
             margin-bottom: 1.5rem;
-            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
         }
         
         /* ============================================
@@ -232,12 +230,6 @@
             color: var(--light-text-secondary);
             font-weight: 500;
         }
-
-		.client-logo img {
-			max-width: 80px;
-			height: auto;
-			object-fit: contain;
-		}
         
         /* Fade nas extremidades do carrossel */
         .clients-carousel::before,
@@ -269,10 +261,6 @@
            CARDS E BOTÕES
            ============================================ */
         
-        .home-cards-row .card {
-	    height: 100%;
-        }
-
         .card {
             border: none;
             border-radius: var(--border-radius);
@@ -287,17 +275,8 @@
             box-shadow: 0 8px 20px rgba(0, 0, 0, 0.12);
         }
         
-        .home-cards-row .card-body {
-            display: flex;
-            flex-direction: column;
-        }
-
         .card-body {
             padding: 1.5rem;
-        }
-
-        .home-cards-row .card-body .mt-auto {
-            margin-top: auto;
         }
         
         .btn {
@@ -370,7 +349,6 @@
             height: 60px;
             background-color: #25D366;
             border-radius: 50%;
-	    text-decoration: none;
             display: flex;
             align-items: center;
             justify-content: center;
@@ -529,16 +507,6 @@
            RESPONSIVIDADE
            ============================================ */
         
-        [data-theme="dark"] .navbar-toggler-icon {
-			filter: invert(1);
-		}
-
-        @media (min-width: 768px) {
-            .home-cards-row .card-body .mt-auto {
-                align-self: flex-start;
-            }
-        }
-
         @media (max-width: 768px) {
             body {
                 padding-top: 70px;
@@ -549,28 +517,9 @@
             }
             
             .client-logo {
-                width: 80px;
-                height: auto;
+                width: 120px;
+                height: 60px;
                 margin: 0 1rem;
-            }
-            
-            .navbar-collapse {
-                transition: all 0.3s ease;
-            }
-
-            .navbar-collapse.show {
-                padding-top: 1.5rem; /* Add space between logo and menu items */
-            }
-
-            .navbar-collapse .navbar-nav {
-                opacity: 0;
-                transform: translateY(-10px);
-                transition: all 0.3s ease;
-            }
-
-            .navbar-collapse.show .navbar-nav {
-                opacity: 1;
-                transform: translateY(0);
             }
             
             .clients-carousel::before,
